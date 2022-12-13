@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      ETEC Filmes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">  
+  <ion-grid>    
+    <ion-row>       
+      <ion-col class="img_destaque ion-align-self-center" size="12" (click)="detalhesFilme(destaque.id)">
+        <label class="title">{{destaque.title}}</label>
+        <ion-img src="{{ destaque.photo_link }}"></ion-img>        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let filme of filmes ; let i = index;" (click)="detalhesFilme(filme.id)" size-xs="6" size-md="3">        
+        <ion-img  src="{{ filme.photo_link }}"></ion-img>
+        <div class="title">{{filme.title}}</div>
+      </ion-col>
+    </ion-row>    
+  </ion-grid>
+</ion-content>
